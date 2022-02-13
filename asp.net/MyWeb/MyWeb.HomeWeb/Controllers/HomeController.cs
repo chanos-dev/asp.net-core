@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
@@ -26,8 +27,11 @@ namespace MyWeb.HomeWeb.Controllers
             return View();
         }
 
+        //[Authorize]
         public IActionResult TicketList()
         {
+            // if (!User.Identity.IsAuthenticated) exception
+
             var status = "In Progress";
             return View(TicketModel.GetList(status));
             //using (var conn = new MySqlConnection(@"Server=192.168.0.105;Port=8448;Database=myweb;Uid=chanos-dev;Pwd=!Qweasdzxc123;"))
