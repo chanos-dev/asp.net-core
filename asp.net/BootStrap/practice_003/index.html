@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/christmas-tree.png">
+    <title>Snow</title>
+</head>
+<body>     
+    <script>
+        function createSnow(i){
+            const el = document.createElement('div');
+            const s = (i % 4);
+            el.classList.add('snow');
+            el.style.marginLeft = randomPosition() + 'px';                    
+            el.style.animation = 'snowAnime linear infinite';            
+            el.style.animationDuration = s+10 + 's';
+            el.style.animationDelay = s + 's';
+            el.style.animationFillMode = 'both';            
+            document.body.appendChild(el);
+        }
+        function randomPosition(){
+            return Math.floor(Math.random() * window.innerWidth);
+        }
+        for(let i=0; i<300; i++){
+            createSnow(i);    
+        }         
+    </script> 
+    <footer>
+        <h1><img src="assets/img/cabin.png" width="300" height="300"></h1> 
+    </footer>
+</body>
+</html>

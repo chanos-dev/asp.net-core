@@ -1,0 +1,15 @@
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Migrations.deps.json
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Migrations.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Migrations.pdb
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Data.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Services.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Services.pdb
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\bin\Debug\netcoreapp3.1\NetCore.Data.pdb
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.csproj.AssemblyReference.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.AssemblyInfoInputs.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.AssemblyInfo.cs
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.csproj.CoreCompileInputs.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.csproj.CopyComplete
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Migrations\obj\Debug\netcoreapp3.1\NetCore.Migrations.pdb

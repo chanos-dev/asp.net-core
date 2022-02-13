@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Snow";
+} 
+
+<body id="snow">
+    <h1 style="color: white">Hello, Web</h1>
+    <script>
+        function createSnow(i) {
+            const el = document.createElement('div');
+            const s = (i % 4);
+            el.classList.add('snowball');
+            el.style.marginLeft = randomPosition() + 'px';
+            el.style.animation = 'snowAnime linear infinite';
+            el.style.animationDuration = s + 10 + 's';
+            el.style.animationDelay = s + 's';
+            el.style.animationFillMode = 'both';
+            document.body.appendChild(el);
+        }
+        function randomPosition() {
+            return Math.floor(Math.random() * window.innerWidth);
+        }
+        for (let i = 0; i < 100; i++) {
+            createSnow(i);
+        }
+    </script> 
+</body> 

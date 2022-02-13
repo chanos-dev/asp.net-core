@@ -1,0 +1,13 @@
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\bin\Debug\netcoreapp3.1\NetCore.Services.deps.json
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\bin\Debug\netcoreapp3.1\NetCore.Services.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\bin\Debug\netcoreapp3.1\NetCore.Services.pdb
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\bin\Debug\netcoreapp3.1\NetCore.Data.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\bin\Debug\netcoreapp3.1\NetCore.Data.pdb
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.csproj.AssemblyReference.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.AssemblyInfoInputs.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.AssemblyInfo.cs
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.csproj.CoreCompileInputs.cache
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.csproj.CopyComplete
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.dll
+C:\Users\Chanos\Desktop\git\csharp\asp.net\NetCorePractice\NetCore.Services\obj\Debug\netcoreapp3.1\NetCore.Services.pdb
