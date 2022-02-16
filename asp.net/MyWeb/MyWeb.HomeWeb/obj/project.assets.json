@@ -311,6 +311,20 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "MyWeb.Lib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "MySqlConnector": "2.1.6"
+        },
+        "compile": {
+          "bin/placeholder/MyWeb.Lib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyWeb.Lib.dll": {}
+        }
       }
     }
   },
@@ -823,13 +837,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MyWeb.Lib/1.0.0": {
+      "type": "project",
+      "path": "../MyWeb.DB/MyWeb.Lib.csproj",
+      "msbuildProject": "../MyWeb.DB/MyWeb.Lib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Dapper >= 2.0.123",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.17",
-      "MySqlConnector >= 2.1.6"
+      "MyWeb.Lib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -858,7 +876,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj": {
+              "projectPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -871,17 +893,9 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
-          "Dapper": {
-            "target": "Package",
-            "version": "[2.0.123, )"
-          },
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
             "version": "[3.1.17, )"
-          },
-          "MySqlConnector": {
-            "target": "Package",
-            "version": "[2.1.6, )"
           }
         },
         "imports": [

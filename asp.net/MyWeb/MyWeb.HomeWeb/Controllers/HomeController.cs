@@ -1,14 +1,13 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MySqlConnector;
 using MyWeb.HomeWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MyWeb.HomeWeb.Controllers
@@ -78,6 +77,31 @@ namespace MyWeb.HomeWeb.Controllers
 
             //return Json(new { msg = "OK" });
             return Redirect("/home/ticketlist");
+        }
+
+        public IActionResult BoardList(string search)
+        {
+            return View(BoardModel.GetList(search));
+        }
+
+        [Authorize]
+        public IActionResult BoardWrite()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult BoardWriteInput([FromForm] BoardModel model)
+        {
+            model.RegUser = Convert.ToUInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            model.RegUsername = User.Identity.Name;
+            model.Insert();
+            return Redirect("/home/boardlist");
+        }
+
+        public IActionResult BoardView(uint idx)
+        {
+            return View(BoardModel.Get(idx));
         }
 
         public IActionResult Chat()

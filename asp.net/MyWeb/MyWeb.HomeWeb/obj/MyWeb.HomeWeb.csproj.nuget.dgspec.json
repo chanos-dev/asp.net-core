@@ -4,14 +4,14 @@
     "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj": {
+    "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj",
-        "projectName": "MyWeb.HomeWeb",
-        "projectPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj",
+        "projectName": "MyWeb.Lib",
+        "projectPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj",
         "packagesPath": "C:\\Users\\Chanos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\obj\\",
+        "outputPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chanos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,13 +44,73 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
-            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
-              "target": "Package",
-              "version": "[3.1.17, )"
-            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj",
+        "projectName": "MyWeb.HomeWeb",
+        "projectPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\MyWeb.HomeWeb.csproj",
+        "packagesPath": "C:\\Users\\Chanos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.HomeWeb\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Chanos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj": {
+                "projectPath": "C:\\Users\\Chanos\\Desktop\\git\\asp.net\\asp.net\\MyWeb\\MyWeb.DB\\MyWeb.Lib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.17, )"
             }
           },
           "imports": [

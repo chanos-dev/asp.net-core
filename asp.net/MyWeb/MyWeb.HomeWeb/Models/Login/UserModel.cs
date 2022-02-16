@@ -1,5 +1,4 @@
-﻿using Dapper;
-using MySqlConnector;
+﻿using MyWeb.Lib.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,10 +31,8 @@ select user_seq UserSeq, user_name UserName, email, password from t_user where u
 ";
 
             UserModel user;
-            using (var conn = new MySqlConnection(@"Server=192.168.0.105;Port=8448;Database=myweb;Uid=chanos-dev;Pwd=!Qweasdzxc123;"))
+            using (var conn = new DBHelper())
             {
-                conn.Open();
-
                 user = conn.QuerySingleOrDefault<UserModel>(sql, new { @user_name = UserName });
             }
 
@@ -54,10 +51,8 @@ select user_seq UserSeq, user_name UserName, email, password from t_user where u
 insert into t_user (user_name, email, password)
 values (@user_name, @email, @password)
 ";
-            using (var conn = new MySqlConnection(@"Server=192.168.0.105;Port=8448;Database=myweb;Uid=chanos-dev;Pwd=!Qweasdzxc123;"))
+            using (var conn = new DBHelper())
             {
-                conn.Open();
-
                 return conn.Execute(sql, new { @user_name = UserName, @email = Email, @password = ConvertToPassWord() });
             }
         }

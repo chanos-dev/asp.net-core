@@ -712,3 +712,8 @@ C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcor
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\MyWeb.Lib.dll
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\MyWeb.Lib.pdb
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardList.cshtml.g.cs
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardWrite.cshtml.g.cs
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardView.cshtml.g.cs
