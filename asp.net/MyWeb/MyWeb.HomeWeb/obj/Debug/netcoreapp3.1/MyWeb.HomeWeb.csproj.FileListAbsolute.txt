@@ -717,3 +717,4 @@ C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcor
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardList.cshtml.g.cs
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardWrite.cshtml.g.cs
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardView.cshtml.g.cs
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardEdit.cshtml.g.cs

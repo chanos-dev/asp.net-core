@@ -99,10 +99,44 @@ namespace MyWeb.HomeWeb.Controllers
             return Redirect("/home/boardlist");
         }
 
+        [Authorize]
+        public IActionResult BoardEdit(uint idx, string type)
+        {
+            var model = BoardModel.Get(idx);
+            var userSeq = Convert.ToUInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            if (model.RegUser != userSeq)
+                throw new Exception("수정 권한이 없습니다.");
+
+            if (type == "U")
+            {
+                return View(model);
+            }
+            else if (type == "D")
+            {
+                model.Delete();
+                return Redirect("/home/boardlist");
+            }
+
+            throw new Exception("잘못된 요청 입니다.");
+        }
+
+        [Authorize]
+        public IActionResult BoardEditInput([FromForm] BoardModel model)
+        {
+            var findModel = BoardModel.Get(model.Idx);
+
+            findModel.Title = model.Title;
+            findModel.Contents = model.Contents;
+            findModel.Update();
+
+            return Redirect($"/home/boardview?idx={findModel.Idx}");
+        }
+
         public IActionResult BoardView(uint idx)
         {
             return View(BoardModel.Get(idx));
-        }
+        } 
 
         public IActionResult Chat()
         {
