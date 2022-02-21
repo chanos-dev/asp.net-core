@@ -718,3 +718,7 @@ C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcor
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardWrite.cshtml.g.cs
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardView.cshtml.g.cs
 C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BoardEdit.cshtml.g.cs
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Chanos\Desktop\git\asp.net\asp.net\MyWeb\MyWeb.HomeWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

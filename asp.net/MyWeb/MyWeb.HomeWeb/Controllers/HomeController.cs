@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -50,13 +51,19 @@ namespace MyWeb.HomeWeb.Controllers
 
         [HttpPost]
         //public IActionResult TicketUpdate(int ticketId, string title)
-        public IActionResult TicketUpdate([FromForm] TicketModel model)
+        public IActionResult TicketUpdate([FromBody] TicketModel model)
         {
             //var model = new TicketModel()
             //{
             //    TicketID = ticketId,
             //    Title = title
             //};
+
+
+            //var sr = new StreamReader(Request.Body);
+            //var body = sr.ReadToEndAsync().GetAwaiter().GetResult();
+            
+
             model.Update();
 //            using (var conn = new MySqlConnection(@"Server=192.168.0.105;Port=8448;Database=myweb;Uid=chanos-dev;Pwd=!Qweasdzxc123;"))
 //            {
@@ -75,8 +82,7 @@ namespace MyWeb.HomeWeb.Controllers
 //                }
 //            }
 
-            //return Json(new { msg = "OK" });
-            return Redirect("/home/ticketlist");
+            return Json(model);
         }
 
         public IActionResult BoardList(string search)

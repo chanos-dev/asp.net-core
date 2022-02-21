@@ -2,6 +2,7 @@
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -21,6 +22,9 @@ namespace MyWeb.Lib.DB
 
         public void BeginTransaction()
         {
+            if (SqlConnection.State != ConnectionState.Open)
+                SqlConnection.Open();
+
             Trans = SqlConnection.BeginTransaction();
         }
         

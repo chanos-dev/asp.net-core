@@ -1,5 +1,5 @@
 ﻿@model List<TicketModel>
-@{ 
+@{
     //var dt = ViewData["dt"] as System.Data.DataTable;
 
     //string title = string.Empty;
@@ -14,6 +14,9 @@
     //var list = ViewData["list"] as List<TicketModel>;
 
 }
+
+<!--Axios CDN-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <div class="row">
     <div class="col-12">
@@ -73,17 +76,17 @@
                         </thead>
                         <tbody>
                             @*@foreach (System.Data.DataRow row in dt.Rows)
-                            {
-                                <tr>
-                                    <td>@row["status"]</td>
-                                    <td>@row["title"]</td>
-                                    <td>@row["ticket_id"]</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            }*@
-                            @foreach(var m in Model)
+                                {
+                                    <tr>
+                                        <td>@row["status"]</td>
+                                        <td>@row["title"]</td>
+                                        <td>@row["ticket_id"]</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                }*@
+                            @foreach (var m in Model)
                             {
                                 <tr>
                                     <td>@m.Status</td>
@@ -116,11 +119,74 @@
     </div>
 </div>
 
-<div>
-    <form id="form1" method="post" action="/home/ticketupdate">
-        <input name="ticketId" type="text" value="" />
-        <input name="title" type="text" value=""/>
+@*<div>
+        <form id="form1" method="post" action="/home/ticketupdate">
+            <input name="ticketId" type="text" value="" />
+            <input name="title" type="text" value=""/>
 
-        <button type="submit" class="btn btn-sm btn-primary">변경 전송</button>
-    </form>
+            <button type="submit" class="btn btn-sm btn-primary">변경 전송</button>
+        </form>
+    </div>*@
+
+<div>
+    <div>
+        <input id="ticket_id" type="text" value="" />
+        <input id="title" type="text" value="" />
+
+        <button id="btn1" type="button" class="btn btn-sm btn-primary">변경 전송</button>
+    </div>
+    <script>
+        $("#btn1").click(function () {
+            var ticket_id = $("#ticket_id").val();
+            var title = $("#title").val();
+
+            ////1. 순수 js  
+            //var xhr = new XMLHttpRequest();
+            //xhr.open("POST", "/home/ticketupdate", true);
+            //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //xhr.onreadystatechange = function () {
+            //    if (xhr.readyState == 4) {
+            //        if (xhr.status == 200) {
+            //            alert("저장 성공");
+            //            location.reload();
+            //        }
+            //    }
+            //}
+
+            //console.log("TicketID=" + ticket_id + "&Title=" + decodeURIComponent(title));
+            //xhr.send("TicketID=" + ticket_id + "&Title=" + decodeURIComponent(title));
+
+            // 2. jquery ajax
+            // default async
+            //$.ajax({
+            //    type: "POST",
+            //    url: "/home/ticketupdate",
+            //    dataType: "json",
+            //    data: {
+            //        "ticketid": ticket_id,
+            //        "title": title
+            //    },
+            //    success: function (data) {
+            //        alert(data.title);
+            //        location.reload();
+            //    },
+            //    error: function (xhr) {
+            //        alert(xhr.responseText);
+            //    }
+            //});
+
+            // 3. axios 
+            axios.post("/home/ticketupdate", {
+                //"ticketid": Number(ticket_id),
+                "ticketid": ticket_id,
+                "title": title
+            }).then(function (response) {
+                alert(response.data.Title);
+                location.reload();
+            }).catch(function (xhr) {
+                alert(xhr.responseText);
+            });
+
+        });
+    </script>
 </div>
