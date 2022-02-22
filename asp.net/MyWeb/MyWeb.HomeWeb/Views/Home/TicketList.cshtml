@@ -134,7 +134,10 @@
         <input id="title" type="text" value="" />
 
         <button id="btn1" type="button" class="btn btn-sm btn-primary">변경 전송</button>
-    </div>
+
+        <button id="btn2" type="button" class="btn btn-sm btn-primary">Web API</button>
+    </div> 
+
     <script>
         $("#btn1").click(function () {
             var ticket_id = $("#ticket_id").val();
@@ -188,5 +191,16 @@
             });
 
         });
+
+        $("#btn2").click(function () {            
+            axios.get("https://localhost:44332/weatherforecast", {
+                "num": 1
+            }).then(function (response) {
+                console.log("성공");
+            }).catch(function (xhr) {
+                console.log("실패");
+            });
+        });
+         
     </script>
 </div>
