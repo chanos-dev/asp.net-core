@@ -1,0 +1,21 @@
+﻿<form method="post" action="/convert/converter" enctype="multipart/form-data">
+    <dl> 
+        <dt>
+            <label>File</label>
+        </dt>
+        <dd>
+            <input type="file" name="file">
+        </dd>
+        <dt>
+            <label>Convert</label>
+        </dt>
+        <dd>
+            <button type="submit" class="btn-lg btn-primary">변환</button>
+        </dd>
+    </dl> 
+
+    <div>
+        <img src="@ViewData["path"]" width="600" height="600" />
+        <pre style="font-size: 13px; background-color: #ffffff; color: #000000; ">@ViewData["convert"]</pre>
+    </div> 
+</form> 
