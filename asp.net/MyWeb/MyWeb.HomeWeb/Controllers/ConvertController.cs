@@ -32,7 +32,7 @@ namespace MyWeb.HomeWeb.Controllers
         } 
 
         [HttpPost]
-        public async Task<IActionResult> Converter(IFormFile file)
+        public async Task<IActionResult> Converter(IFormFile file, int width)
         {
             if (file != null && file.Length > 0)
             {
@@ -56,7 +56,7 @@ namespace MyWeb.HomeWeb.Controllers
                     using (var img = Image.FromStream(fs))
                     using (var bmp = new Bitmap(img))
                     {
-                        ViewData["convert"] = AsciiHelper.ConvertImageToAscii(bmp);
+                        ViewData["convert"] = AsciiHelper.ConvertImageToAscii(bmp, width);
                     }
                 } 
 

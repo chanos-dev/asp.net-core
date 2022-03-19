@@ -7,6 +7,13 @@
             <input type="file" name="file">
         </dd>
         <dt>
+            <label>Width</label>
+        </dt>
+        <dd>
+            <input type="range" id ="ipRange" name="width" min="50" max="250" value="100" step="10" />            
+            <label id ="lbRange"></label>
+        </dd>
+        <dt>
             <label>Convert</label>
         </dt>
         <dd>
@@ -19,3 +26,11 @@
         <pre style="font-size: 13px; background-color: #ffffff; color: #000000; ">@ViewData["convert"]</pre>
     </div> 
 </form> 
+
+<script>      
+    $("#lbRange").text($("#ipRange").val());
+
+    $("#ipRange").on("input", function () {
+        $("#lbRange").text($("#ipRange").val());
+    }); 
+</script>
