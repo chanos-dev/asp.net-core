@@ -23,7 +23,7 @@ namespace quiz_server.Models
         public string Option3 { get; set; }
         [Column(TypeName = "nvarchar(50)")]
         public string Option4 { get; set; }
-
-        public string Answer { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string Answer { get; set; }        
     }
 }
