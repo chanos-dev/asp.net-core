@@ -45,12 +45,16 @@ namespace quiz_server.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutParticipant(int id, Participant participant)
+        public async Task<IActionResult> PutParticipant(int id, ParticipantResult participantResult)
         {
-            if (id != participant.ParticipantId)
+            if (id != participantResult.ParticipantId)
             {
                 return BadRequest();
             }
+
+            var participant = _context.Participants.Find(id);
+            participant.Score = participantResult.Score;
+            participant.TimeTaken = participantResult.TimeTaken;
 
             _context.Entry(participant).State = EntityState.Modified;
 

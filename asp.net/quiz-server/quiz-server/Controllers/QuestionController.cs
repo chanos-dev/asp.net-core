@@ -81,16 +81,23 @@ namespace quiz_server.Controllers
             return NoContent();
         }
 
-        // POST: api/Question
+        // POST: api/Question/GetAnswers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Question>> PostQuestion(Question question)
+        [Route("GetAnswers")]
+        public async Task<ActionResult<Question>> PostQuestion([FromBody] int[] qnIds)
         {
-            _context.Questions.Add(question);
-            await _context.SaveChangesAsync();
+            var answers = await(_context.Questions.Where(q => qnIds.Contains(q.QnId)).Select(q => new
+            {
+                QnId = q.QnId,
+                QnInWords = q.QnInWords,
+                ImageName = q.ImageName,
+                Options = new[] { q.Option1, q.Option2, q.Option3, q.Option4 },
+                Answer = q.Answer,
+            })).ToListAsync();
 
-            return CreatedAtAction("GetQuestion", new { id = question.QnId }, question);
+            return Ok(answers);
         }
 
         // DELETE: api/Question/5
