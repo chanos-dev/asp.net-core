@@ -49,7 +49,7 @@ namespace JWT.Controllers
                 Expires = DateTime.UtcNow.AddDays(7)
             };
 
-            Response.Cookies.Append(AccessTokenName, token, cookieOptions);
+            Response.Cookies.Append(RefreshTokenName, token, cookieOptions);
         }
 
         [HttpPost]
@@ -99,7 +99,7 @@ namespace JWT.Controllers
         [HttpPut]
         [AllowAnonymous]
         public ActionResult<SignInModel> SignIn([FromForm] string signName,
-                                                     [FromForm] string password)
+                                                [FromForm] string password)
         { 
             User? findUser = MemoryUserTable.Where(u => u.SignName == signName && u.PasswordHash == password).FirstOrDefault();
 
@@ -165,7 +165,6 @@ namespace JWT.Controllers
                     alreadyRefreshToken.RevokeTime = DateTime.Now;
                     alreadyRefreshToken.ActiveCheck();
                 }
-
 
                 this.CookieAccessToken("");
                 this.CookieRefreshToken("");

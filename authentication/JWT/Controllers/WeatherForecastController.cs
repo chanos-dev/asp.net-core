@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace JWT.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -28,6 +28,12 @@ namespace JWT.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost()]
+        public ActionResult<WeatherForecast> TestMethod()
+        {
+            return null;
         }
     }
 }

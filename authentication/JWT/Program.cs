@@ -1,3 +1,4 @@
+using JWT.MiddleWare;
 using JWT.Model;
 using JWT.Utils;
 
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 

@@ -18,6 +18,8 @@ namespace JWT.MiddleWare
 
         public async Task Invoke(HttpContext context, IJwtUtils jwtUtils)
         {
+            // string? token = context.Request.Cookies["AccessToken"];
+
             string? token = context.Request.Headers["Authorization"]
                             .FirstOrDefault()?
                             .Split(_jwtAuthSettingModel.AuthTokenStartName)
