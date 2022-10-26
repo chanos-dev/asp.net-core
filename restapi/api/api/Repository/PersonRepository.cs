@@ -21,13 +21,13 @@ public class PersonRepository : IPersonRepository
         } 
     };
 
-    public IEnumerable<Person> GetAll()
-    {
-        return MemoryStorage;
-    }
+    public IEnumerable<Person> GetAll() => MemoryStorage;
 
-    public Person Get(int id)
+    public Person Get(int id) => MemoryStorage.Find(p => p.Id == id);
+
+    public Person Add(Person person)
     {
-        return MemoryStorage.Find(p => p.Id == id);
+        MemoryStorage.Add((person));
+        return person;
     }
 }

@@ -38,4 +38,10 @@ public class PersonController : ControllerBase
         else 
             return Ok(this._personRepository.GetAll().OrderByDescending(p => p.Id));
     }
+
+    [HttpPost]
+    public ActionResult<Person> Post(Person person)
+    { 
+        return Ok(this._personRepository.Add(person));
+    }
 }
