@@ -40,7 +40,11 @@ public class PersonController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Person> Post(Person person)
+    // response
+    [Produces("application/json")]
+    // request
+    [Consumes("multipart/form-data", "application/json")] 
+    public ActionResult<Person> Post([FromBody] Person person)
     { 
         return Ok(this._personRepository.Add(person));
     }
