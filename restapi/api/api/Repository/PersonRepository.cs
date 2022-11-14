@@ -30,4 +30,16 @@ public class PersonRepository : IPersonRepository
         MemoryStorage.Add((person));
         return person;
     }
+
+    public bool Delete(Person person) => MemoryStorage.Remove(person);
+    public bool Update(Person person)
+    {
+        var idx = MemoryStorage.FindIndex(p => p.Id == person.Id);
+        if (idx < 0)
+            return false;
+        
+        MemoryStorage[idx] = person;
+
+        return true;
+    }
 }

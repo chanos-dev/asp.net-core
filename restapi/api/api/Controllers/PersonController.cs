@@ -35,17 +35,56 @@ public class PersonController : ControllerBase
     {
         if (sort)
             return Ok(this._personRepository.GetAll().OrderBy(p => p.Id));
-        else 
-            return Ok(this._personRepository.GetAll().OrderByDescending(p => p.Id));
+        
+        return Ok(this._personRepository.GetAll().OrderByDescending(p => p.Id));
     }
-
+    
+    [HttpGet]
+    [Route("[action]")]
+    public ActionResult<Person> GetName(string name)
+    {
+        return Ok(this._personRepository.GetAll().FirstOrDefault(p => p.Name == name));
+    }
+    
+    [HttpGet("int2/{id:int}")]
+    public ActionResult<Person> GetTwo(int id)
+    {
+        return Ok(this._personRepository.Get(id));
+    } 
+    
     [HttpPost]
     // response
     [Produces("application/json")]
     // request
-    [Consumes("multipart/form-data", "application/json")] 
+    [Consumes("multipart/form-data", "application/json")]
     public ActionResult<Person> Post([FromBody] Person person)
-    { 
+    {
         return Ok(this._personRepository.Add(person));
+    }
+
+    [HttpDelete("{id}")]
+    public ActionResult<bool> Delete([FromRoute] int id)
+    {
+        var person = this._personRepository.Get(id);
+        if (!this._personRepository.Delete(person))
+            return BadRequest();
+        
+        return NoContent();
+    }
+
+    [HttpGet]
+    [Route("[action]")]
+    public ActionResult UseService([FromServices] IDateTime dateTime)
+    {
+        return Content( $"Current server time: {dateTime.Now}");
+    }
+
+    [HttpPut]
+    public ActionResult Put([FromBody] Person person)
+    {
+        if (!this._personRepository.Update(person))
+            return BadRequest();
+
+        return Ok(person);
     }
 }

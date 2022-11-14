@@ -1,3 +1,4 @@
+using api.Model;
 using api.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 });
 
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddSingleton<IDateTime, SystemDateTime>();
 
 var app = builder.Build();
 

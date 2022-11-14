@@ -35,12 +35,7 @@ public class Person : IValidatableObject
     public string ConfirmRRN { get; set; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-    {
-        if (this.Id < 3)
-        {
-            yield return new ValidationResult("Invalid!.", new[] { nameof(Id) });
-        }
-
+    { 
         if (this.Age < 10)
         {
             yield return new ValidationResult("Invalid!!!.", new[] { nameof(Age) });
