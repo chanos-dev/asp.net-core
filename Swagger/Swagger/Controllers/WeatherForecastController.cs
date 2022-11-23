@@ -18,7 +18,19 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// 날씨 조회 API
+    /// </summary>
+    /// <remarks>
+    /// 예시
+    ///
+    ///     GET /WeatherForecast 
+    ///
+    /// </remarks>
+    /// <response code="200">조회 성공</response>
     [HttpGet(Name = "GetWeatherForecast")]
+    [Produces("application/json")]
+    [ProducesResponseType(typeof(WeatherForecast), 200)]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
