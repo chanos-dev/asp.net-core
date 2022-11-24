@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swagger.Filter;
 
 namespace Swagger.Controllers;
 
@@ -31,6 +32,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     [Produces("application/json")]
     [ProducesResponseType(typeof(WeatherForecast), 200)]
+    [ApiKeyFilter]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
