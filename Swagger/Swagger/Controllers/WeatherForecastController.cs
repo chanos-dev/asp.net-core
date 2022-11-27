@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Swagger.Filter;
+using Swagger.Model;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Swagger.Controllers;
 
@@ -42,5 +44,29 @@ public class WeatherForecastController : ControllerBase
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+    }
+
+    [HttpGet]
+    [Route("GetTwo")]
+    [SwaggerOperation("두번쨰 조회 방법", "단일 날씨 조회")]
+    [SwaggerResponse(StatusCodes.Status200OK, "조회 성공", typeof(WeatherForecast))]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "조회 실패", typeof(Error))]
+    public ActionResult GetTwo()
+    {
+        if (DateTime.Now.Second % 2 == 0)
+        {
+            return BadRequest(new Error
+            {
+                Code =StatusCodes.Status400BadRequest,
+                Message = "Error!!",
+            });
+        }
+        
+        return Ok(new WeatherForecast
+        {
+            Date = DateTime.Now,
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+        });
     }
 }

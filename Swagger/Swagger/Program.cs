@@ -50,6 +50,8 @@ builder.Services.AddSwaggerGen(options =>
     };
 
     options.AddSecurityRequirement(requirement);
+    
+    options.EnableAnnotations();
 }).AddSwaggerGenNewtonsoftSupport();
 
 var app = builder.Build();
