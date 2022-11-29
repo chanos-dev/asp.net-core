@@ -61,6 +61,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    // url : /api-docs
+    // options ref : https://github.com/Redocly/redoc/blob/main/README.md#redoc-options-object
+    app.UseReDoc();
 }
 
 app.UseHttpsRedirection();
