@@ -1,5 +1,6 @@
 using api.Model;
 using api.Repository;
+using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,31 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddSingleton<IDateTime, SystemDateTime>();
 
+builder.Services.AddMemoryCache();
+
+
+//builder.Services.Configure<IpRateLimitOptions>(options => builder.Configuration.GetSection("IpRateLimitingSettings").Bind(options));
+builder.Services.Configure<IpRateLimitOptions>(options =>
+{
+    options.EnableEndpointRateLimiting = true;
+    options.StackBlockedRequests = false;
+    options.RealIpHeader = "X-Real-IP";
+    options.ClientIdHeader = "X-ClientId";
+    options.HttpStatusCode = 429;
+    options.GeneralRules = new()
+    {
+        new RateLimitRule()
+        {
+            Endpoint = "*",
+            Period = "10s",
+            Limit = 6
+        }
+    }; 
+});
+
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddInMemoryRateLimiting();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,6 +65,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseIpRateLimiting();
 
 app.UseHttpsRedirection();
 
