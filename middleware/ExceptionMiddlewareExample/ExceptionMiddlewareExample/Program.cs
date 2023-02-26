@@ -28,4 +28,15 @@ app.UseMiddleware<OneMiddleware>();
 app.UseMiddleware<TwoMiddleware>();
 app.UseMiddleware<ExceptionsMiddleware>();
 
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("use method!");
+    await next();
+});
+
+app.Run(async context =>
+{
+    await context.Response.WriteAsJsonAsync("end!");
+});
+
 app.Run();
