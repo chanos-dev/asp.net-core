@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace PetAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PetController : ControllerBase
     {
         private static readonly Pet[] Pets = new[]
